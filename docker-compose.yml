@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  backend:
+    image: xingyuankang/lab-backend:latest
+    ports:
+      - "8082:8080"
+  frontend:
+    image: xingyuankang/lab-frontend:latest
+    ports:
+      - "8081:80"
