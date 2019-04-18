@@ -40,6 +40,6 @@ docker-compose:
   - apk add --update curl && rm -rf /var/cache/apk/*
 
   script:
-  - docker-compose -H 35.153.73.48 pull
-  - docker-compose -H 35.153.73.48 down
-  - docker-compose -H 35.153.73.48 up -d
+  - docker-compose -H 35.153.73.48:2379 pull
+  - docker-compose -H 35.153.73.48:2379 down
+  - docker-compose -H 35.153.73.48:2379 up -d
