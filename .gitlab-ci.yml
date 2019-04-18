@@ -16,7 +16,7 @@ maven-build:
   image: maven:3-jdk-8
   stage: build
   variables:
-    MAVEN_OPTS: "Dmaven.repo.local=.m2/repository"
+    MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
 
   script:
   - mvn clean install -B -Pdeploy
@@ -28,16 +28,16 @@ docker-build:
   stage: package
   script:
 
-  - docker build --build-arg JAVA_FILE=target/backend.jar -t xingyuankang/lab-backend .
+  - docker build - -build-arg JAVA_FILE=target/backend.jar -t xingyuankang/lab-backend .
   - docker login -u xingyuankang -p XzBh6mqmM5rtxXF
   - docker push xingyuankang/lab-backend
 
 docker-compose:
   stage: deploy
   before_script:
-  - apk add --no-cache py-pip    # < --
+  - apk add - -no-cache py-pip    # < --
   - pip install docker-compose~=1.23.0    # < --
-  - apk add --update curl && rm -rf /var/cache/apk/*
+  - apk add - -update curl && rm -rf /var/cache/apk/*
 
   script:
   - docker-compose -H 35.153.73.48 pull
