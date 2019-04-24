@@ -1,11 +1,11 @@
 image: docker:latest
 services:
-- docker:dind
+ - docker:dind
 
 stages:
-- build
-- package
-- deploy
+ - build
+ - package
+ - deploy
 variables:
   DOCKER_DRIVER: overlay
 cache:
