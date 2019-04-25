@@ -1,7 +1,9 @@
+package camt.se234.lab10.service;
+
 import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-public class TestGradeService {
+public class GradeServiceImplTest {
     @Test
     public void testGetGrade(){
         GradeServiceImpl gradeService = new GradeServiceImpl();
